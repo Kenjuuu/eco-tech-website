@@ -1,0 +1,364 @@
+/* EcoWorld - shared stylesheet for all three pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green-dark: #174d35;
+    --green: #267347;
+    --green-light: #a6d98c;
+    --page: #f5f8f2;
+    --soft-green: #e7f1e5;
+    --text: #263b2c;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--page);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--green);
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 3px solid #e5a93d;
+    outline-offset: 3px;
+}
+
+.site-header {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--green-light);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: var(--green-light);
+    border-color: var(--green-light);
+}
+
+.hero {
+    min-height: 440px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 90px 8%;
+    background:
+        linear-gradient(rgba(0, 40, 20, .62), rgba(0, 40, 20, .62)),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 11px 24px;
+    border-radius: 25px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: 700;
+    transition: background .2s, transform .2s;
+}
+
+.button:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+.page-hero {
+    background: var(--soft-green);
+    text-align: center;
+    padding: 55px 8%;
+}
+
+.page-hero h1 {
+    color: var(--green-dark);
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    max-width: 760px;
+    margin: auto;
+}
+
+section {
+    padding: 58px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--green-dark);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    max-width: 760px;
+    text-align: center;
+    margin: 0 auto 34px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.green-section {
+    background: var(--soft-green);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: center;
+    gap: 30px;
+}
+
+.feature-image {
+    width: 100%;
+    min-height: 250px;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.tips {
+    max-width: 850px;
+    margin: auto;
+    padding-left: 24px;
+}
+
+.tips li {
+    margin: 12px 0;
+    padding-left: 5px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+caption {
+    padding: 15px;
+    font-weight: 700;
+    color: var(--green-dark);
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dce7dc;
+}
+
+th {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+    background: #f1f7ef;
+}
+
+tbody tr:hover {
+    background: #e5f2df;
+}
+
+.resource-list {
+    max-width: 850px;
+    margin: auto;
+    padding-left: 22px;
+}
+
+.resource-list li {
+    margin: 12px 0;
+}
+
+.resource-list a {
+    font-weight: 700;
+}
+
+.checklist {
+    max-width: 850px;
+    margin: auto;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+}
+
+.checklist label {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5ece3;
+    cursor: pointer;
+}
+
+.checklist input {
+    margin-right: 10px;
+    accent-color: var(--green);
+    transform: scale(1.1);
+}
+
+.media-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.media-box img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 20px auto;
+}
+
+.video-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.note {
+    background: #fff9e8;
+    border-left: 5px solid #e5a93d;
+    padding: 15px 18px;
+    margin: 25px auto 0;
+    max-width: 850px;
+    border-radius: 5px;
+}
+
+footer {
+    background: var(--green-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 24px 8%;
+}
+
+footer a {
+    color: var(--green-light);
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 380px;
+        padding: 75px 6%;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    .page-hero {
+        padding: 42px 6%;
+    }
+}
